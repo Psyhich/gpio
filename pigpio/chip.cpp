@@ -21,7 +21,7 @@ namespace pigpio
 {
 
 ////////////////////////////////////////////////////////////////////////////////
-chip::chip(asio::io_service& io) : chip_base("pigpio")
+chip::chip(asio::io_context& io) : chip_base("pigpio")
 {
     if(gpioInitialise() < 0) throw std::runtime_error(
         type_id(this) + ": Error initializing pigpio library"
@@ -42,7 +42,7 @@ chip::~chip()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-unique_chip get_chip(asio::io_service& io, std::string)
+unique_chip get_chip(asio::io_context& io, std::string)
 {
     return std::make_unique<pigpio::chip>(io);
 }

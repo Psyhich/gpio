@@ -12,7 +12,7 @@
 #include <gpio++/pin.hpp>
 #include <gpio++/types.hpp>
 
-#include <asio/io_service.hpp>
+#include <asio/io_context.hpp>
 #include <cstddef>
 #include <memory>
 #include <string>
@@ -41,7 +41,7 @@ struct chip
 
 ////////////////////////////////////////////////////////////////////////////////
 using unique_chip = std::unique_ptr<chip>;
-extern unique_chip get_chip(asio::io_service&, std::string param = "");
+extern unique_chip get_chip(asio::io_context&, std::string param = "");
 
 ////////////////////////////////////////////////////////////////////////////////
 }

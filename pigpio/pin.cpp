@@ -24,7 +24,7 @@ namespace pigpio
 {
 
 ////////////////////////////////////////////////////////////////////////////////
-pin::pin(asio::io_service& io, pigpio::chip* chip, gpio::pos n) :
+pin::pin(asio::io_context& io, pigpio::chip* chip, gpio::pos n) :
     pin_base(chip, n), fd_(io), buffer_(sizeof(gpioReport_t))
 {
     valid_modes_ = { in, out };

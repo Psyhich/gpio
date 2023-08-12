@@ -18,5 +18,6 @@ target_link_libraries(gpio++
 	PRIVATE
 		asio
 	PUBLIC
+		gpio++-base
 		common-headers
 )

@@ -27,7 +27,7 @@ namespace generic
 {
 
 ////////////////////////////////////////////////////////////////////////////////
-pin::pin(asio::io_service& io, generic::chip* chip, gpio::pos n) :
+pin::pin(asio::io_context& io, generic::chip* chip, gpio::pos n) :
     pin_base(chip, n), fd_(io), buffer_(sizeof(gpioevent_data))
 {
     valid_modes_ = { in, out };

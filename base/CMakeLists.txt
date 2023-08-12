@@ -11,7 +11,7 @@ add_library(gpio++-base OBJECT
 	pin_base.cpp
 )
 target_include_directories(gpio++-base
-	PRIVATE
+	PUBLIC
 		"${CMAKE_CURRENT_SOURCE_DIR}/"
 )
 target_link_libraries(gpio++-base

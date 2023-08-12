@@ -25,7 +25,7 @@ namespace generic
 {
 
 ////////////////////////////////////////////////////////////////////////////////
-chip::chip(asio::io_service& io, std::string id) :
+chip::chip(asio::io_context& io, std::string id) :
     chip_base("chip"), fd_(io)
 {
     if(id.find_first_not_of("0123456789") != std::string::npos
@@ -74,7 +74,7 @@ chip::~chip()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-unique_chip get_chip(asio::io_service& io, std::string param)
+unique_chip get_chip(asio::io_context& io, std::string param)
 {
     return std::make_unique<generic::chip>(io, std::move(param));
 }

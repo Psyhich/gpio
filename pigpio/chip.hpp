@@ -11,7 +11,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #include "chip_base.hpp"
 
-#include <asio/io_service.hpp>
+#include <asio/io_context.hpp>
 #include <string>
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -25,7 +25,7 @@ class chip : public chip_base
 {
 public:
     ////////////////////
-    chip(asio::io_service&);
+    chip(asio::io_context&);
     virtual ~chip() override;
 };
 
