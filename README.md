@@ -15,22 +15,11 @@ List of chip-specific backends:
 ### Prerequisites
 
 * Linux kernel >= 4.8
-* [asio C++ Library](https://think-async.com/) >= 1.10.10
 * Linux headers >= 4.8
-* CMake >= 3.1
+* CMake >= 3.22
 * Recommended: [pigpio library](http://abyz.me.uk/rpi/pigpio/index.html) (for Raspberry Pi)
 
-NB: asio 1.12.1 has a bug that may cause SIGSEGV due to null pointer deference, when using callbacks, eg. `gpio::pin::on_state_changed()`. It is recommended that you install an unofficial version 1.10.10 from [here](https://github.com/dimitry-ishenko-cpp/asio/releases/tag/asio-1-10-10).
-
 ### Installation
-
-Binary (Debian/Ubuntu/etc):
-```console
-$ version=4.2
-$ arch=$(uname -p)
-$ wget https://github.com/dimitry-ishenko-cpp/gpio/releases/download/v${version}/gpio++_${version}_Linux_${arch}.deb
-$ sudo apt install ./gpio++_${version}_Linux_${arch}.deb
-```
 
 Compile from source:
 ```console
