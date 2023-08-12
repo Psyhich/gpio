@@ -5,6 +5,7 @@ project(gpio++ VERSION 4.2)
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPM.cmake")
 CPMAddPackage("gh:chriskohlhoff/asio#asio-1-28-1")
 if(asio_ADDED)
+	find_package(Threads REQUIRED)
 	add_library(asio INTERFACE)
 
 	target_include_directories(asio
@@ -52,7 +53,6 @@ if(asio_ADDED)
 			WIN32_LEAN_AND_MEAN
 		)
 	endif()
-	target_disable_static_analysis(asio)
 endif()
 
 add_subdirectory(common-headers)
