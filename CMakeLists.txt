@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.22)
 
 project(gpio++ VERSION 4.2)
 
+option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/CPM.cmake")
 CPMAddPackage("gh:chriskohlhoff/asio#asio-1-28-1")
 if(asio_ADDED)
@@ -20,7 +22,7 @@ if(asio_ADDED)
 
 	target_link_libraries(asio
 		INTERFACE
-		Threads::Threads
+			Threads::Threads
 	)
 
 	if(WIN32)
